@@ -1,0 +1,13 @@
+<div class="card text-center p-3">
+    <figure>
+        <img class="imagesEmployees" [src]="myEmployee.image" [alt]="myEmployee.first_name">
+    </figure>
+    <h5>{{myEmployee.first_name}} {{myEmployee.last_name}}</h5>
+    <p>{{myEmployee.username}}</p>
+    <div>
+        <button type="button" class="btn btn-primary btn-sm btn-info" [routerLink]="['/employee',myEmployee._id]">Ver
+            Detalle</button>
+        <button type="button" class="btn btn-primary btn-sm btn-success">Actualizar</button>
+        <button type="button" class="btn btn-primary btn-sm btn-danger">Borrar</button>
+    </div>
+</div>

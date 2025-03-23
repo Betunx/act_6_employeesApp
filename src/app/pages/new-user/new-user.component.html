@@ -1,0 +1,28 @@
+<section class="container mt-2">
+    <form #newUsersForm="ngForm" (ngSubmit)="getDataForm(newUsersForm.value)">
+        <h2 class="text-center">Crear nuevo usuario</h2>
+        <div class="my-2">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control form-control-sm" placeholder="Introduce un nombre" name="nombre"
+                id="nombre">
+        </div>
+        <div class="my-2">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control form-control-sm" placeholder="Introduce Apellido" name="apellido"
+                id="apellido">
+        </div>
+        <div class="my-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control form-control-sm" placeholder="Introduce un correo" name="email"
+                id="email">
+        </div>
+        <div class="my-2">
+            <label for="imagen" class="form-label">Imagen</label>
+            <input type="text" class="form-control form-control-sm" placeholder="Introduce una imagen" name="imagen"
+                id="imagen">
+        </div>
+        <div class="my-2">
+            <input type="submit" value="Enviar" class="btn btn-danger">
+        </div>
+    </form>
+</section>

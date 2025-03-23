@@ -1,0 +1,10 @@
+<section class="empleados">
+    <h3 class="text-center mb-3">Nuestros Usuarios</h3>
+    <div class="row g-4">
+        @for(empleado of arrEmployeesObservable; track empleado.id){
+        <article class="col-12 col-md-6 col-lg-4">
+            <app-employee-card [myEmployee]="empleado"></app-employee-card>
+        </article>
+        }
+    </div>
+</section>
