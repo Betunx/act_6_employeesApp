@@ -5,6 +5,7 @@ import { toast, NgxSonnerToaster } from 'ngx-sonner';
 import { EmployeesService } from '../../services/employees.service';
 
 
+
 @Component({
   selector: 'app-employee-card',
   imports: [RouterLink,],
@@ -14,9 +15,8 @@ import { EmployeesService } from '../../services/employees.service';
 export class EmployeeCardComponent {
 
   @Input() myEmployee!: IEmployee;
-  deleteService = inject(EmployeesService);
   employeesServices = inject(EmployeesService);
-  @Output() deleteItemEmit: EventEmitter<boolean> = new EventEmitter();
+  @Output() deleteItemEmit: EventEmitter<Boolean> = new EventEmitter();
 
   deleteEmployee(id: string) {
     toast(`Vas a borrar al empleado ${this.myEmployee.first_name} ${this.myEmployee.last_name}`,
@@ -24,12 +24,15 @@ export class EmployeeCardComponent {
         action: {
           label: 'Aceptar',
           onClick: async () => {
-            await this.deleteService.delete(id)
+            await this.employeesServices.delete(id)
             this.deleteItemEmit.emit(true)
           }
         }
       }
     );
+  }
+  delete(event: Boolean) {
+    this.deleteItemEmit.emit(event)
   }
 
 }

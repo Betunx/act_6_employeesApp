@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class ViewUserComponent {
   @Input() idEmployee: string = "";
+  @Output() deleteItemEmit: EventEmitter<Boolean> = new EventEmitter();
   employee!: IEmployee;
   service = inject(EmployeesService);
 
@@ -24,6 +25,5 @@ export class ViewUserComponent {
       console.log(error);
     }
   }
-
 
 }

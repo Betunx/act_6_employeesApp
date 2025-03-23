@@ -10,5 +10,5 @@ export const routes: Routes = [
     { path: "newUser", component: NewUserComponent },
     { path: "updateUser", component: UpdateUserComponent },
     { path: "employee/:idEmployee", component: ViewUserComponent },
-    { path: "employee/update/:idEmployee", component: NewUserComponent }
+    { path: "employee/update/:idEmployee", component: UpdateUserComponent }
 ];

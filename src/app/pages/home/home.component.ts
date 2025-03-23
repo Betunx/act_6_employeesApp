@@ -4,7 +4,6 @@ import { EmployeesService } from '../../services/employees.service';
 import { Iresponse } from '../../interfaces/iresponse.interface';
 import { EmployeeCardComponent } from "../../components/employee-card/employee-card.component";
 
-
 @Component({
   selector: 'app-home',
   imports: [EmployeeCardComponent,],
@@ -15,7 +14,7 @@ export class HomeComponent {
   arrEmployeesObservable: IEmployee[] = [];
   employeesServices = inject(EmployeesService);
   @Input() myEmployee!: IEmployee;
-  @Output() deleteItemEmit: EventEmitter<boolean> = new EventEmitter();
+  @Output() deleteItemEmit: EventEmitter<Boolean> = new EventEmitter();
 
   async ngOnInit() {
     this.employeesServices.getAllObservable().subscribe((data: Iresponse) => {
@@ -25,7 +24,5 @@ export class HomeComponent {
     )
   }
 
-  delete(event: boolean) {
-    this.deleteItemEmit.emit(event)
-  }
+
 }

@@ -7,7 +7,9 @@
     <div>
         <button type="button" class="btn btn-primary btn-sm btn-info" [routerLink]="['/employee',myEmployee._id]">Ver
             Detalle</button>
-        <button type="button" class="btn btn-primary btn-sm btn-success">Actualizar</button>
-        <button type="button" class="btn btn-primary btn-sm btn-danger">Borrar</button>
+        <button type="button" class="btn btn-primary btn-sm btn-success"
+            [routerLink]="['/employee','update',myEmployee._id]">Actualizar</button>
+        <button (click)="deleteEmployee(myEmployee._id)" type="button"
+            class="btn btn-primary btn-sm btn-danger">Borrar</button>
     </div>
 </div>
